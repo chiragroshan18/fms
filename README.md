@@ -163,8 +163,7 @@ To launch the containerized full-stack application using Docker Compose:
 docker-compose up --build -d
 ```
 
-- **Frontend Client**: Accessible at `http://localhost` (Nginx on Port 80)
-- **Backend API**: Accessible at `http://localhost:5000`
+
 
 ---
 
