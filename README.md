@@ -69,40 +69,40 @@ flowchart TD
 
 ```text
 feedback-management-system/
-├── client/                     # Frontend React (Vite) Application
+├── client/                     
 │   ├── public/
-│   │   └── favicon.svg         # FMS Monogram Icon
+│   │   └── favicon.svg         
 │   ├── src/
-│   │   ├── components/         # Glass UI Design System (GlassCard, StatCard, RatingStars, Modal, etc.)
-│   │   ├── context/            # AuthContext & JWT Token State
-│   │   ├── hooks/              # Custom hooks (useDebounce)
-│   │   ├── layouts/            # AppLayout (Responsive Glass Sidebar + Top Navbar)
-│   │   ├── pages/              # Login, Register, UserDashboard, SubmitFeedback, MyFeedback, Profile, AdminDashboard, FeedbackManagement, AdminCategoryManagement
-│   │   ├── services/           # Centralized HTTP API client
-│   │   ├── App.jsx             # React Router config & Protected Guards
-│   │   ├── index.css           # Glassmorphism utilities & Tailwind imports
+│   │   ├── components/         
+│   │   ├── context/           
+│   │   ├── hooks/             
+│   │   ├── layouts/            
+│   │   ├── pages/            
+│   │   ├── services/           
+│   │   ├── App.jsx             
+│   │   ├── index.css           
 │   │   └── main.jsx
-│   ├── Dockerfile              # Multi-stage Dockerfile (Vite Build + Nginx)
-│   ├── nginx.conf              # Nginx SPA fallback config
-│   ├── index.html              # Custom tab title ("Feedback Management System")
-│   ├── tailwind.config.js      # Glass theme design tokens
+│   ├── Dockerfile              
+│   ├── nginx.conf              
+│   ├── index.html              
+│   ├── tailwind.config.js      
 │   └── package.json
 │
-├── server/                     # Backend Express.js Server
-│   ├── controllers/            # authController, feedbackController, adminController, categoryController
-│   ├── middleware/             # authMiddleware (JWT protect & adminOnly), errorHandler
+├── server/                     
+│   ├── controllers/            
+│   ├── middleware/             
 │   ├── prisma/
-│   │   ├── schema.prisma       # PostgreSQL Schema & Indexes
-│   │   └── seed.js             # Seeding script for categories & Admin credentials
-│   ├── routes/                 # Express REST endpoints
-│   ├── utils/                  # Prisma client singleton
-│   ├── Dockerfile              # Node.js Server Dockerfile
-│   ├── server.js               # Main Express application entry point
+│   │   ├── schema.prisma       
+│   │   └── seed.js            
+│   ├── routes/                 
+│   ├── utils/                  
+│   ├── Dockerfile              
+│   ├── server.js               
 │   └── package.json
 │
-├── docker-compose.yml          # Container orchestration config
-├── .gitignore                  # Git ignore rules for node_modules, .env, and builds
-└── README.md                   # System Architecture & Documentation
+├── docker-compose.yml          
+├── .gitignore                 
+└── README.md                  
 ```
 
 ---
