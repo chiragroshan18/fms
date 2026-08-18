@@ -126,7 +126,7 @@ PORT=5000
 # Admin Default Credentials for Seeding
 ADMIN_NAME="System Administrator"
 ADMIN_EMAIL="admin@fms.com"
-ADMIN_PASSWORD="123456"
+ADMIN_PASSWORD="654321"
 
 ```
 
