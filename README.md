@@ -114,17 +114,20 @@ feedback-management-system/
 Copy environment settings in `server/.env`:
 
 ```ini
-DATABASE_URL="postgresql://neondb_owner:npg_4JWaYK2lUwxm@ep-noisy-dawn-ays2ew88-pooler.c-5.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
-JWT_SECRET="fms_super_secret_jwt_key_2026_neon_db_secure"
+# PostgreSQL Database URL (e.g., Neon / Supabase / local PostgreSQL)
+DATABASE_URL="postgresql://user:password@localhost:5432/fms_db?sslmode=require"
+
+# JWT Secret Key
+JWT_SECRET="fms_super_secret_jwt_key_2026_change_in_production"
+
+# Server Port
 PORT=5000
+
+# Admin Default Credentials for Seeding
 ADMIN_NAME="System Administrator"
 ADMIN_EMAIL="admin@fms.com"
 ADMIN_PASSWORD="123456"
-```
 
-And in `client/.env`:
-```ini
-VITE_API_BASE_URL=http://localhost:5000/api
 ```
 
 ### 2. Database Synchronization & Seed
@@ -165,18 +168,4 @@ docker-compose up --build -d
 
 ---
 
-## 📊 Time & Space Complexity Analysis
 
-| Operation | Time Complexity | Space Complexity | Performance Optimizations |
-| :--- | :--- | :--- | :--- |
-| **Login & Auth Lookup** | $O(1)$ | $O(1)$ | Indexed `@unique` B-Tree lookup on `users.email` |
-| **Submit Feedback** | $O(1)$ | $O(1)$ | Direct row insert into `feedback` table |
-| **User Dashboard Metrics** | $O(n)$ | $O(1)$ | PostgreSQL native aggregations (`AVG()`, `COUNT()`, `GROUP BY`) |
-| **Admin Pagination & Search**| $O(\log N + M)$ | $O(M)$ | Server-side pagination ($M=10$ page limit) with indexed filtering |
-
----
-
-## 🔐 Default Credentials
-
-- **Admin Account**: `admin@fms.com` / `123456`
-- **User Registration**: Available on the public `/register` page.
