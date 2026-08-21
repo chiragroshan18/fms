@@ -25,6 +25,22 @@ app.use('/api/feedback', feedbackRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/admin', adminRoutes);
 
+// Root Welcome Endpoint
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Welcome to Feedback Management System (FMS) REST API Server',
+    status: 'online',
+    endpoints: {
+      health: '/api/health',
+      auth: '/api/auth',
+      categories: '/api/categories',
+      feedback: '/api/feedback',
+      dashboard: '/api/dashboard',
+      admin: '/api/admin'
+    }
+  });
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'FMS Server API is running smoothly.' });
